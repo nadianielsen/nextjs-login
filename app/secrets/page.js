@@ -17,7 +17,7 @@ const Secrets = async () => {
     // console.log(secrets)
 
     return (
-        <main>
+        <main className="my-2">
             <h1>Secrets</h1>
             {secrets.map(secret => (
                 <div key={secret.id}>
