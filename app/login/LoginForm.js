@@ -33,8 +33,8 @@ const LoginForm = () => {
                 }
             })
             .then((result) => {
-                setCookie("token", result.accessToken)
-                setCookie("user", JSON.stringify(result.user))
+                setCookie("token", result.accessToken, { sameSite: "lax"})
+                setCookie("user", JSON.stringify(result.user), {sameSite: "lax"})
                 setErrors(null) //fjerner error efter man har skrevet password forkert
                 router.push("/secrets")
             })

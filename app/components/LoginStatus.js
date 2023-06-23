@@ -20,8 +20,8 @@ const LoginStatus = () => {
     // console.log(token)
 
     const handleLogout = () => {
-        deleteCookie("token")
-        deleteCookie("user")
+        deleteCookie("token", {sameSite: "lax"})
+        deleteCookie("user", {sameSite: "lax"})
         setToken(null)
         // skriver fordi at vi skal have den til at sige log in igen
         router.push("/")
