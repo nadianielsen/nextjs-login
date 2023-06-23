@@ -1,10 +1,9 @@
 "use client"
 import { Formik, Form, Field } from "formik";
 import { setCookie } from "cookies-next";
-import { useState } from "react";
 
 const Login = () => {
-    
+
     return ( 
         <main className="">
             <Formik initialValues={{
@@ -19,7 +18,7 @@ const Login = () => {
                     },
                     "body": JSON.stringify(values)
                 })
-                .then(response => response.json())
+                .then((response) => response.json())
                 .then((result) => {
                     setCookie("token", result.accessToken)
                     setCookie("user", JSON.stringify(result.user))
